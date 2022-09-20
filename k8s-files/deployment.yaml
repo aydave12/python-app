@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: preveil-web-app
+  labels:
+    name: preveil-web-app
+    app: preveil-web-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: preveil-web-app
+  template:
+    metadata:
+      name: preveil-web-app
+      labels:
+        app: preveil-web-app
+    spec:
+      containers:
+      - name: preveil-web-app
+        image: aydave/prevail-web:latest
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Always

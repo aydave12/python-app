@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: preveil-web-app
+  labels:
+    name: preveil-web-app
+    app: preveil-web-app
+spec:
+  type: NodePort
+  ports:
+  - port: 5000
+    protocol: TCP
+  selector:
+    app: preveil-web-app
